@@ -1,24 +1,10 @@
 import React from 'React';
-import { StyleSheet, Text, View } from 'react-native';
+import { SceneWrapper, SceneDescription } from '@components/Scene';
 
 export const Home = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Shoe Washer!</Text>
-    </View>
+    <SceneWrapper>
+      <SceneDescription>Shoe Washer</SceneDescription>
+    </SceneWrapper>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
