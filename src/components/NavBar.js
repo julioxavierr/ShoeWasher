@@ -6,25 +6,27 @@ import chevronLeft from '@assets/images/chevronLeft.png';
 import { BLUE_COLOR } from '@theme';
 
 const NavBar = props => {
-  const { title } = props;
+  const { title, onPressBack } = props;
 
   return (
     <NavWrapper>
-      <Back />
+      <Back onPress={onPressBack !== undefined ? onPressBack : undefined} />
       <Title>{title.toUpperCase()}</Title>
     </NavWrapper>
   );
 };
 
-const Back = () => (
-  <TouchableOpacity
-    onPress={() => {
-      Actions.pop();
-    }}
-  >
-    <BackImage />
-  </TouchableOpacity>
-);
+const Back = props => {
+  const { onPress } = props;
+
+  return (
+    <TouchableOpacity
+      onPress={() => (onPress === undefined ? Actions.pop() : onPress())}
+    >
+      <BackImage />
+    </TouchableOpacity>
+  );
+};
 
 const NavWrapper = styled.View`
   flex-direction: row;
