@@ -9,7 +9,7 @@ const List = () => {
       <NavBar title="Wash list" />
       <SceneDescription>FlatList</SceneDescription>
       <Button
-        onPress={() => Actions.detail()}
+        onPress={() => Actions.wash()}
         title="Present detail"
         color="#841584"
       />
