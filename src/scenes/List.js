@@ -7,8 +7,8 @@ const List = () => {
   const _alert = () => {
     Alert.alert(
       'Log out',
-      'Are you sure you want to log out?',
-      [{ text: 'Yes', onPress: () => Actions.pop() }, { text: 'Cancel' }],
+      'Tem certeza que quer deslogar?',
+      [{ text: 'Sim', onPress: () => Actions.pop() }, { text: 'Cancelar' }],
       { cancelable: false },
     );
   };
