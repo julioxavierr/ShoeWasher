@@ -1,12 +1,9 @@
 import React, { Component } from 'React';
-import {
-  SceneWrapper,
-  SceneDescription,
-  SceneContent,
-} from '@components/Scene';
-import { Actions } from 'react-native-router-flux';
 import { Form, Item, Input, Label, Button, Text } from 'native-base';
+import { SceneWrapper, SceneContent } from '@components/Scene';
 import styled from 'styled-components';
+import { Actions } from 'react-native-router-flux';
+import logo from '@assets/images/logo.png';
 
 class Home extends Component {
   constructor(props) {
@@ -15,16 +12,16 @@ class Home extends Component {
   }
 
   _onSubmit() {
-    console.log('Log user', this.state.username);
+    console.log('Log in user', this.state.username);
     Actions.list();
   }
 
   render() {
     return (
       <SceneWrapper>
-        <SceneDescription>Shoe Washer</SceneDescription>
+        <Logo />
         <SceneContent>
-          <LoginForm>
+          <Form>
             <Item floatingLabel>
               <Label>Usuário</Label>
               <Input
@@ -43,7 +40,7 @@ class Home extends Component {
                 onChangeText={value => this.setState({ password: value })}
               />
             </Item>
-          </LoginForm>
+          </Form>
         </SceneContent>
         <Submit primary onPress={() => this._onSubmit()}>
           <Text>ENTRAR</Text>
@@ -58,8 +55,15 @@ const Submit = styled(Button)`
   align-self: center;
 `;
 
-const LoginForm = styled(Form)`
-  margin-top: 60;
+const Logo = styled.Image.attrs({
+  source: logo,
+})`
+  width: 400;
+  height: 200;
+  margin-top: 100;
+  margin-bottom: 10;
+  align-self: center;
+  resize-mode: contain;
 `;
 
 export default Home;
