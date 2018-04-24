@@ -1,5 +1,4 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
 import { Actions } from 'react-native-router-flux';
 import chevronLeft from '@assets/images/chevronLeft.png';
@@ -20,11 +19,11 @@ const Back = props => {
   const { onPress } = props;
 
   return (
-    <TouchableOpacity
+    <BackTouchable
       onPress={() => (onPress === undefined ? Actions.pop() : onPress())}
     >
       <BackImage />
-    </TouchableOpacity>
+    </BackTouchable>
   );
 };
 
@@ -32,10 +31,13 @@ const NavWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   padding-top: 20;
-  padding-left: 32;
-  padding-right: 52;
   height: 80;
   background-color: ${BLUE_COLOR};
+`;
+
+const BackTouchable = styled.TouchableOpacity`
+  padding-horizontal: 20;
+  padding-vertical: 10;
 `;
 
 const BackImage = styled.Image.attrs({
