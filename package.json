@@ -23,6 +23,7 @@
   "pre-commit": "lint:staged",
   "dependencies": {
     "babel-eslint": "^8.2.2",
+    "native-base": "^2.4.2",
     "react": "16.2.0",
     "react-native": "0.52.0",
     "react-native-router-flux": "^4.0.0-beta.28",
