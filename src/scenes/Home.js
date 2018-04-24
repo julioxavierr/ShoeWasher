@@ -1,12 +1,12 @@
 import React, { Component } from 'React';
-import { Button } from 'react-native';
 import {
   SceneWrapper,
   SceneDescription,
   SceneContent,
 } from '@components/Scene';
 import { Actions } from 'react-native-router-flux';
-import { Form, Item, Input, Label } from 'native-base';
+import { Form, Item, Input, Label, Button, Text } from 'native-base';
+import styled from 'styled-components';
 
 class Home extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Home extends Component {
       <SceneWrapper>
         <SceneDescription>Shoe Washer</SceneDescription>
         <SceneContent>
-          <Form>
+          <LoginForm>
             <Item floatingLabel>
               <Label>Usuário</Label>
               <Input
@@ -43,16 +43,23 @@ class Home extends Component {
                 onChangeText={value => this.setState({ password: value })}
               />
             </Item>
-          </Form>
+          </LoginForm>
         </SceneContent>
-        <Button
-          onPress={() => this._onSubmit()}
-          title="Log in"
-          color="#841584"
-        />
+        <Submit primary onPress={() => this._onSubmit()}>
+          <Text>ENTRAR</Text>
+        </Submit>
       </SceneWrapper>
     );
   }
 }
+
+const Submit = styled(Button)`
+  margin-top: 40;
+  align-self: center;
+`;
+
+const LoginForm = styled(Form)`
+  margin-top: 60;
+`;
 
 export default Home;
