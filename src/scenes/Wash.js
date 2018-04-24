@@ -4,8 +4,8 @@ import { SceneWrapper, SceneDescription, NavBar } from '@components/Scene';
 const Wash = () => {
   return (
     <SceneWrapper>
-      <NavBar title="Wash" />
-      <SceneDescription>Wash #NUMBER</SceneDescription>
+      <NavBar title="Lavagem" />
+      <SceneDescription>LAVAGEM #NUMERO</SceneDescription>
     </SceneWrapper>
   );
 };

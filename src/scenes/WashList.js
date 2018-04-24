@@ -1,6 +1,7 @@
 import React from 'React';
-import { Button, Alert } from 'react-native';
-import { SceneWrapper, SceneDescription, NavBar } from '@components/Scene';
+import { Alert } from 'react-native';
+import { List, ListItem, Text, Content } from 'native-base';
+import { SceneWrapper, NavBar } from '@components/Scene';
 import { Actions } from 'react-native-router-flux';
 
 const WashList = () => {
@@ -15,13 +16,14 @@ const WashList = () => {
 
   return (
     <SceneWrapper>
-      <NavBar title="Wash list" onPressBack={() => _alert()} />
-      <SceneDescription>FlatList</SceneDescription>
-      <Button
-        onPress={() => Actions.wash()}
-        title="Present detail"
-        color="#841584"
-      />
+      <NavBar title="Lista de lavagens" onPressBack={() => _alert()} />
+      <Content>
+        <List>
+          <ListItem onPress={() => Actions.wash()}>
+            <Text>Lavagem</Text>
+          </ListItem>
+        </List>
+      </Content>
     </SceneWrapper>
   );
 };
