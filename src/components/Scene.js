@@ -17,11 +17,13 @@ export const SceneBackground = styled.View`
 export const SceneDescription = styled.Text`
   font-size: 32;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   color: ${BLUE_COLOR};
-  padding-left: 32;
-  padding-right: 32;
   margin-top: 24;
+`;
+
+export const SceneContent = styled.View`
+  padding-horizontal: 32;
 `;
 
 export NavBar from '@components/NavBar';
