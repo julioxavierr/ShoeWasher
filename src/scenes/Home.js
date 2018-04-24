@@ -14,7 +14,7 @@ class Home extends Component {
 
   _onSubmit() {
     console.log('Log in user', this.state.username);
-    Actions.list();
+    Actions.washlist();
   }
 
   render() {

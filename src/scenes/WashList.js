@@ -3,10 +3,10 @@ import { Button, Alert } from 'react-native';
 import { SceneWrapper, SceneDescription, NavBar } from '@components/Scene';
 import { Actions } from 'react-native-router-flux';
 
-const List = () => {
+const WashList = () => {
   const _alert = () => {
     Alert.alert(
-      'Log out',
+      'SAIR',
       'Tem certeza que quer deslogar?',
       [{ text: 'Sim', onPress: () => Actions.pop() }, { text: 'Cancelar' }],
       { cancelable: false },
@@ -26,4 +26,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default WashList;
