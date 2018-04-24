@@ -8,7 +8,7 @@ export const SceneWrapper = props => {
   return <SceneBackground source={background}>{children}</SceneBackground>;
 };
 
-export const SceneBackground = styled.View`
+export const SceneBackground = styled.ImageBackground`
   flex: 1;
   width: 101%;
   background-color: ${GRAY_COLOR};

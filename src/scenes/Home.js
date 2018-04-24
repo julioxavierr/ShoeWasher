@@ -4,6 +4,7 @@ import { SceneWrapper, SceneContent } from '@components/Scene';
 import styled from 'styled-components';
 import { Actions } from 'react-native-router-flux';
 import logo from '@assets/images/logo.png';
+import background from '@assets/images/background.png';
 
 class Home extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Home extends Component {
 
   render() {
     return (
-      <SceneWrapper>
+      <SceneWrapper background={background}>
         <Logo />
         <SceneContent>
           <Form>
