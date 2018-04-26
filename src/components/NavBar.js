@@ -56,6 +56,7 @@ const Title = styled.Text`
   font-size: 14;
   font-weight: bold;
   color: white;
+  margin-right: 50;
 `;
 
 export default NavBar;
