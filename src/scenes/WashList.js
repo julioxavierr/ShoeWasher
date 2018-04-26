@@ -1,11 +1,15 @@
 import React from 'React';
 import { Alert } from 'react-native';
-import { List, ListItem, Text, Content } from 'native-base';
+import { List, Content } from 'native-base';
 import { SceneWrapper, NavBar } from '@components/Scene';
 import ItemHeader from '@components/ItemHeader';
-import styled from 'styled-components';
+import WashItem from '@components/WashItem';
 import { Actions } from 'react-native-router-flux';
 import exit from '@assets/images/exit.png';
+
+const mockedInProgress = [{ id: 2 }, { id: 3 }];
+
+const mockedFinished = [{ id: 1 }];
 
 const WashList = () => {
   const _alert = () => {
@@ -27,13 +31,17 @@ const WashList = () => {
       <Content>
         <List>
           <ItemHeader>EM ANDAMENTO</ItemHeader>
-          <ListItem onPress={() => Actions.wash()}>
-            <Text>Lavagem #2</Text>
-          </ListItem>
+          {mockedInProgress.map(item => (
+            <WashItem key={item.id} id={item.id}>
+              Lavagem #{item.id}
+            </WashItem>
+          ))}
           <ItemHeader>FINALIZADAS</ItemHeader>
-          <ListItem onPress={() => Actions.wash()}>
-            <Text>Lavagem #1</Text>
-          </ListItem>
+          {mockedFinished.map(item => (
+            <WashItem key={item.id} id={item.id}>
+              Lavagem #{item.id}
+            </WashItem>
+          ))}
         </List>
       </Content>
     </SceneWrapper>
