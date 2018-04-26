@@ -61,8 +61,8 @@ const Logo = styled.Image.attrs({
 })`
   width: 400;
   height: 200;
-  margin-top: 100;
-  margin-bottom: 10;
+  margin-top: 120;
+  margin-bottom: 20;
   align-self: center;
   resize-mode: contain;
 `;
