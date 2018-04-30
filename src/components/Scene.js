@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GRAY_COLOR, BLUE_COLOR } from '@theme';
+import { KeyboardAvoidingView } from 'react-native';
 
 export const SceneWrapper = props => {
   const { background, children } = props;
 
-  return <SceneBackground source={background}>{children}</SceneBackground>;
+  return (
+    <SceneBackground source={background}>
+      <KeyboardAvoidingView behavior="position" enabled>
+        {children}
+      </KeyboardAvoidingView>
+    </SceneBackground>
+  );
 };
 
 export const SceneBackground = styled.ImageBackground`
