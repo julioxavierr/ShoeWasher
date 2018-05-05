@@ -1,6 +1,6 @@
 import React, { Component } from 'React';
 import { Form, Item, Input, Label, Button, Text } from 'native-base';
-import { SceneWrapper, SceneContent } from '@components/Scene';
+import { InputScene, SceneContent } from '@components/Scene';
 import styled from 'styled-components';
 import { Actions } from 'react-native-router-flux';
 import logo from '@assets/images/logo.png';
@@ -19,7 +19,7 @@ class Home extends Component {
 
   render() {
     return (
-      <SceneWrapper background={background}>
+      <InputScene background={background}>
         <Logo />
         <SceneContent>
           <Form>
@@ -46,7 +46,7 @@ class Home extends Component {
         <Submit primary onPress={() => this._onSubmit()}>
           <Text>ENTRAR</Text>
         </Submit>
-      </SceneWrapper>
+      </InputScene>
     );
   }
 }

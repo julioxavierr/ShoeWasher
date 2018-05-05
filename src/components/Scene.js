@@ -6,6 +6,12 @@ import { KeyboardAvoidingView } from 'react-native';
 export const SceneWrapper = props => {
   const { background, children } = props;
 
+  return <SceneBackground source={background}>{children}</SceneBackground>;
+};
+
+export const InputScene = props => {
+  const { background, children } = props;
+
   return (
     <SceneBackground source={background}>
       <KeyboardAvoidingView behavior="position" enabled>
