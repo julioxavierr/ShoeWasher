@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { login } from '@redux/authentication/actions';
+import { request } from '@helpers';
 import logo from '@assets/images/logo.png';
 import background from '@assets/images/background.png';
 
@@ -15,8 +16,17 @@ class Home extends Component {
   }
 
   _onSubmit() {
-    this.props.dispatch(login(this.state.username));
-    Actions.washlist();
+    const requestBody = JSON.stringify({
+      email: this.state.username,
+      password: this.state.password,
+    });
+
+    request('http://localhost:8000/api/rest-auth/login/', 'POST', requestBody)
+      .then(response => {
+        this.props.dispatch(login(`Token ${response.key}`));
+        Actions.washlist();
+      })
+      .catch(() => console.log('Error'));
   }
 
   render() {
@@ -29,9 +39,7 @@ class Home extends Component {
               <Label>Usuário</Label>
               <Input
                 value={this.state.username}
-                onChangeText={value =>
-                  this.setState({ username: value.replace(/[^a-z0-9._]/g, '') })
-                }
+                onChangeText={value => this.setState({ username: value })}
                 autoCapitalize="none"
                 maxLength={25}
               />
