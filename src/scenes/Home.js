@@ -3,6 +3,8 @@ import { Form, Item, Input, Label, Button, Text } from 'native-base';
 import { InputScene, SceneContent } from '@components/Scene';
 import styled from 'styled-components';
 import { Actions } from 'react-native-router-flux';
+import { connect } from 'react-redux';
+import { login } from '@redux/authentication/actions';
 import logo from '@assets/images/logo.png';
 import background from '@assets/images/background.png';
 
@@ -13,7 +15,7 @@ class Home extends Component {
   }
 
   _onSubmit() {
-    console.log('Log in user', this.state.username);
+    this.props.dispatch(login(this.state.username));
     Actions.washlist();
   }
 
@@ -67,4 +69,4 @@ const Logo = styled.Image.attrs({
   resize-mode: contain;
 `;
 
-export default Home;
+export default connect()(Home);
