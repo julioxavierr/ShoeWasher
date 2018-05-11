@@ -1,15 +1,11 @@
 import { store } from '../index';
 
-const requestInfo = (
-  method,
-  body,
-  token = store.getState().authentication.token,
-) => {
+const requestInfo = (method, body) => {
   return {
     method: method,
     headers: new Headers({
       'Content-type': 'application/json',
-      Authentication: token,
+      Authorization: store.getState().authentication.token,
     }),
     body: body,
   };
