@@ -6,7 +6,7 @@ import Wash from '@scenes/Wash';
 import { Provider } from 'react-redux';
 import configureStore from '@store/create';
 
-const store = configureStore();
+export const store = configureStore();
 
 export default () => (
   <Provider store={store}>
