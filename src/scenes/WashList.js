@@ -60,12 +60,12 @@ class WashList extends Component {
                 Lavagem #{item.id}
               </WashItem>
             ))}
-            <ItemHeader>FINALIZADAS</ItemHeader>
+            {/* <ItemHeader>FINALIZADAS</ItemHeader>
             {mockedFinished.map(item => (
               <WashItem key={item.id} id={item.id}>
                 Lavagem #{item.id}
               </WashItem>
-            ))}
+            ))} */}
           </List>
         </Content>
       </SceneWrapper>
