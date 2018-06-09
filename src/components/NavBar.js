@@ -5,15 +5,13 @@ import chevronLeft from '@assets/images/chevronLeft.png';
 import { BLUE_COLOR } from '@theme';
 
 const NavBar = props => {
-  const { title, onPressBack, icon } = props;
+  const { title, onPressBack, backImage } = props;
 
   return (
     <NavWrapper>
-      <Back
-        onPress={onPressBack !== undefined ? onPressBack : undefined}
-        icon={icon}
-      />
+      <Back onPress={onPressBack} icon={backImage} />
       <Title>{title.toUpperCase()}</Title>
+      <Refresh />
     </NavWrapper>
   );
 };
@@ -22,28 +20,42 @@ const Back = props => {
   const { onPress, icon } = props;
 
   return (
-    <BackTouchable
+    <IconTouchable
       onPress={() => (onPress === undefined ? Actions.pop() : onPress())}
     >
       <BackImage source={icon !== undefined ? icon : chevronLeft} />
-    </BackTouchable>
+    </IconTouchable>
   );
 };
+
+const Refresh = ({ onPress }) => (
+  <IconTouchable onPress={onPress}>
+    <RefreshImage />
+  </IconTouchable>
+);
 
 const NavWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   padding-top: 20;
+  padding-horizontal: 24;
   height: 80;
   background-color: ${BLUE_COLOR};
 `;
 
-const BackTouchable = styled.TouchableOpacity`
-  padding-horizontal: 20;
+const IconTouchable = styled.TouchableOpacity`
   padding-vertical: 10;
 `;
 
 const BackImage = styled.Image`
+  width: 16;
+  height: 16;
+  resize-mode: contain;
+`;
+
+const RefreshImage = styled.Image.attrs({
+  source: require('@assets/images/refresh.png'),
+})`
   width: 16;
   height: 16;
   resize-mode: contain;
@@ -56,7 +68,6 @@ const Title = styled.Text`
   font-size: 14;
   font-weight: bold;
   color: white;
-  margin-right: 50;
 `;
 
 export default NavBar;
