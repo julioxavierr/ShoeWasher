@@ -50,6 +50,7 @@ class WashList extends Component {
         <NavBar
           title="Lista de serviços"
           onPressBack={() => this._alert()}
+          onPressRefresh={() => this._getServices()}
           backImage={exit}
         />
         <Content>

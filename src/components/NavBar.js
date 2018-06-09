@@ -5,13 +5,13 @@ import chevronLeft from '@assets/images/chevronLeft.png';
 import { BLUE_COLOR } from '@theme';
 
 const NavBar = props => {
-  const { title, onPressBack, backImage } = props;
+  const { title, onPressBack, onPressRefresh, backImage } = props;
 
   return (
     <NavWrapper>
       <Back onPress={onPressBack} icon={backImage} />
       <Title>{title.toUpperCase()}</Title>
-      <Refresh />
+      <Refresh onPress={onPressRefresh} />
     </NavWrapper>
   );
 };
