@@ -36,7 +36,7 @@ class Wash extends Component {
 
     return (
       <SceneWrapper>
-        <NavBar title="Lavagem" />
+        <NavBar title="Lavagem" onPressRefresh={() => this._getDetail()} />
         <Info first>Lavagem: #{info.id}</Info>
         <Info>Máquina: {info.shoe_washer}</Info>
         <Info>Tipo de lavagem: {info.wash_type}</Info>
